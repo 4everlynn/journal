@@ -1,5 +1,6 @@
 package config
 
+// Git to describe Repo's structure
 type Git struct {
 	Name    string
 	Path    string
