@@ -7,6 +7,7 @@ type Git struct {
 	Disable bool
 }
 
+// JournalConfig to describe .journal.yaml
 type JournalConfig struct {
 	Version    string
 	Maintainer string
