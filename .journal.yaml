@@ -8,9 +8,11 @@ git:
   boneco-portal:
     name: 发货宝管理入口界面
     path: /Users/disware/Vue/hitotek/portal
+    disable: true
   boneco-api:
     name: 发货宝接口
     path: /Users/disware/Documents/Java/boneco-backend
+    disable: true
   journal:
     name: Journal
     path: /Users/disware/Documents/Go/src/diswares.com.journal
