@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="77198734-b5b2-47ef-acdf-50ba2e0b1a3d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/diswares.com.journal.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.journal.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmd/daemon.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmd/root.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmd/stylish.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmd/version.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/type.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/global/application.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/global/constants.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/release/journal" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/release/journal.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/release/journal_linux" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/support/formatter.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/support/parser.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/support/type.go" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" path="/usr/local/Cellar/go/1.15.2/libexec" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1i0Ml6cUK3iyD21ys0zy2IwCt4M" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/release" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="go build diswares.com.journal" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="diswares.com.journal" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/main.go" />
+      <package value="diswares.com.journal" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build diswares.com.journal" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="304" y="155" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601105160973">
+      <screen x="0" y="23" width="1680" height="942" />
+    </state>
+    <state x="304" y="155" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.942@0.23.1680.942" timestamp="1601105160973" />
+    <state x="575" y="292" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601102036751">
+      <screen x="0" y="23" width="1680" height="940" />
+    </state>
+    <state x="575" y="292" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1680.940@0.23.1680.940" timestamp="1601102036751" />
+    <state x="575" y="293" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1680.942@0.23.1680.942" timestamp="1601044985866" />
+    <state width="1638" height="246" key="GridCell.Tab.0.bottom" timestamp="1601105312874">
+      <screen x="0" y="23" width="1680" height="942" />
+    </state>
+    <state width="1638" height="246" key="GridCell.Tab.0.bottom/0.23.1680.942@0.23.1680.942" timestamp="1601105312874" />
+    <state width="1638" height="246" key="GridCell.Tab.0.center" timestamp="1601105312873">
+      <screen x="0" y="23" width="1680" height="942" />
+    </state>
+    <state width="1638" height="246" key="GridCell.Tab.0.center/0.23.1680.942@0.23.1680.942" timestamp="1601105312873" />
+    <state width="1638" height="246" key="GridCell.Tab.0.left" timestamp="1601105312873">
+      <screen x="0" y="23" width="1680" height="942" />
+    </state>
+    <state width="1638" height="246" key="GridCell.Tab.0.left/0.23.1680.942@0.23.1680.942" timestamp="1601105312873" />
+    <state width="1638" height="246" key="GridCell.Tab.0.right" timestamp="1601105312874">
+      <screen x="0" y="23" width="1680" height="942" />
+    </state>
+    <state width="1638" height="246" key="GridCell.Tab.0.right/0.23.1680.942@0.23.1680.942" timestamp="1601105312874" />
+    <state x="349" y="132" key="SettingsEditor" timestamp="1601137945246">
+      <screen x="0" y="23" width="1680" height="940" />
+    </state>
+    <state x="349" y="132" key="SettingsEditor/0.23.1680.940@0.23.1680.940" timestamp="1601137945246" />
+    <state x="542" y="101" width="596" height="783" key="find.popup" timestamp="1601141349562">
+      <screen x="0" y="23" width="1680" height="940" />
+    </state>
+    <state x="542" y="101" width="596" height="783" key="find.popup/0.23.1680.940@0.23.1680.940" timestamp="1601141349562" />
+    <state x="669" y="259" key="refactoring.ChangeSignatureDialog" timestamp="1601139108690">
+      <screen x="0" y="23" width="1680" height="940" />
+    </state>
+    <state x="669" y="259" key="refactoring.ChangeSignatureDialog/0.23.1680.940@0.23.1680.940" timestamp="1601139108690" />
+    <state x="505" y="229" width="670" height="676" key="search.everywhere.popup" timestamp="1601138188767">
+      <screen x="0" y="23" width="1680" height="940" />
+    </state>
+    <state x="505" y="229" width="670" height="676" key="search.everywhere.popup/0.23.1680.940@0.23.1680.940" timestamp="1601138188767" />
+    <state x="505" y="229" width="670" height="678" key="search.everywhere.popup/0.23.1680.942@0.23.1680.942" timestamp="1601112471010" />
+  </component>
+</project>

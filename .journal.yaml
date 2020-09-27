@@ -1,0 +1,9 @@
+version: '1'
+maintainer: Edward
+git:
+  one:
+    name: 智慧工地
+    path: /Users/disware/Vue/hitotek/htscs-ui
+  video-process-service:
+    name: 光学官网
+    path: /Users/disware/Vue/optical
