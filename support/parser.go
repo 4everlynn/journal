@@ -22,14 +22,11 @@ func (GitLogParser) Parse(headFilePath string, start int64, end int64) []GitLog 
 		git := make([]GitLog, 0)
 		for scanner.Scan() {
 			data := ParseLine(scanner.Text())
-			if len(data.Message) > 0 {
-				git = append(git, data)
+			if data.timestamp >= start && data.timestamp <= end {
+				if len(data.Message) > 0 {
+					git = append(git, data)
+				}
 			}
-			//if data.timestamp >= start && data.timestamp <= end {
-			//	if len(data.Message) > 0 {
-			//		git = append(git, data)
-			//	}
-			//}
 		}
 
 		err := logs.Close()

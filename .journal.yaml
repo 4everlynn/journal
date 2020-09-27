@@ -12,7 +12,7 @@ git:
   boneco-api:
     name: 发货宝接口
     path: /Users/disware/Documents/Java/boneco-backend
-    disable: true
+    disable: false
   journal:
     name: Journal
     path: /Users/disware/Documents/Go/src/diswares.com.journal
