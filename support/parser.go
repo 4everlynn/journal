@@ -17,20 +17,25 @@ type GitLogParser struct{}
 func (GitLogParser) Parse(headFilePath string, start int64, end int64) []GitLog {
 	logs, err := os.Open(headFilePath)
 	if err == nil {
-		defer logs.Close()
 		//log.Println(green("[INFO]"), green(headFilePath), green("OPENED SUCCESS"))
 		scanner := bufio.NewScanner(logs)
 		git := make([]GitLog, 0)
 		for scanner.Scan() {
 			data := ParseLine(scanner.Text())
-			if data.timestamp >= start && data.timestamp <= end {
-				if len(data.Message) > 0 {
-					git = append(git, data)
-				}
+			if len(data.Message) > 0 {
+				git = append(git, data)
 			}
+			//if data.timestamp >= start && data.timestamp <= end {
+			//	if len(data.Message) > 0 {
+			//		git = append(git, data)
+			//	}
+			//}
 		}
 
-		return git
+		err := logs.Close()
+		if err == nil {
+			return git
+		}
 	}
 	return nil
 }

@@ -24,6 +24,9 @@ func generate(cmd *cobra.Command, args []string) {
 	cfg := GetConfig()
 	println(time.Now().Format("20060102") + " 日报")
 	for service, git := range cfg.Git {
+		if git.Disable == true {
+			continue
+		}
 		all := make([]support.GitLog, 0)
 		repo := strings.Join([]string{git.Path, ".git", "logs", "HEAD"}, global.Separator)
 		git.Path = repo

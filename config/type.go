@@ -1,8 +1,9 @@
 package config
 
 type Git struct {
-	Name string
-	Path string
+	Name    string
+	Path    string
+	Disable bool
 }
 
 type JournalConfig struct {

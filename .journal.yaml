@@ -1,6 +1,16 @@
 version: '1'
 maintainer: Edward
 git:
-  one:
+  boneco-admin:
+    name: 发货宝管理界面
+    path: /Users/disware/Documents/Java/boneco-backend
+    disable: true
+  boneco-portal:
+    name: 发货宝管理入口界面
+    path: /Users/disware/Vue/hitotek/portal
+  boneco-api:
+    name: 发货宝接口
+    path: /Users/disware/Documents/Java/boneco-backend
+  journal:
     name: Journal
     path: /Users/disware/Documents/Go/src/diswares.com.journal
