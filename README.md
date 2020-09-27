@@ -6,6 +6,9 @@
 
 ![stage](./stage.gif)
 
+# How to download ?
+See [RELEASE](https://external.diswares.com/common/journal/-/releases)
+
 # Features
 
 - No need for Git environment, just a project folder managed by Git
