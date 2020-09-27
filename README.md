@@ -2,7 +2,7 @@
 ![Golang](https://img.shields.io/badge/100%25-Golang-olive)
 # Journal
 
-> A small but beautiful, simple and performance-free job report command line job (CLI) (based on code version management warehouse)
+> A small but beautiful, simple and performance job report command line job (CLI) (based on code version management warehouse)
 
 ![stage](./stage.gif)
 
