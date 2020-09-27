@@ -38,7 +38,7 @@ func generate(cmd *cobra.Command, args []string) {
 			if len(all) > 0 {
 				// inject real path
 				git.Path = repo
-				println(git.Name)
+				println(color.FgCyan.Render(git.Name))
 				formatter := new(support.GitLogDailyFormatter)
 				println(formatter.Format(all))
 			}
