@@ -3,15 +3,17 @@ maintainer: Edward
 git:
   boneco-admin:
     name: 发货宝管理界面
-    path: /Users/disware/Documents/Java/boneco-backend
-    disable: true
+    path: /Users/disware/Vue/disware/boneco/web-admin
   boneco-portal:
     name: 发货宝管理入口界面
     path: /Users/disware/Vue/hitotek/portal
-    disable: true
   boneco-api:
     name: 发货宝接口
     path: /Users/disware/Documents/Java/boneco-backend
+    disable: false
+  windows-x64-client:
+    name: 鲁班流量宝
+    path: /Users/disware/Vue/lbft/windows-x64-client
     disable: false
   journal:
     name: Journal

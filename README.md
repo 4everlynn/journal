@@ -26,8 +26,9 @@ maintainer: Edward
 git:
   boneco-admin:
     name: 发货宝管理界面
-    # path to your 
+    # path to your git repo
     path: /Users/disware/Documents/Java/boneco-backend
+    # is enabled
     disable: true
   boneco-portal:
     name: 发货宝管理入口界面

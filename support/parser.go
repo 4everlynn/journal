@@ -17,7 +17,6 @@ type GitLogParser struct{}
 func (GitLogParser) Parse(headFilePath string, start int64, end int64) []GitLog {
 	logs, err := os.Open(headFilePath)
 	if err == nil {
-		//log.Println(green("[INFO]"), green(headFilePath), green("OPENED SUCCESS"))
 		scanner := bufio.NewScanner(logs)
 		git := make([]GitLog, 0)
 		for scanner.Scan() {
