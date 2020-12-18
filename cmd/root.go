@@ -3,7 +3,6 @@ package cmd
 import (
 	"diswares.com.journal/config"
 	"fmt"
-	"github.com/gookit/color"
 	"github.com/spf13/cobra"
 	"log"
 	"os"
@@ -84,11 +83,5 @@ func initConfig() {
 	}
 	if err := viper.Unmarshal(&cfg); err != nil {
 		log.Println("err when decode config")
-	} else {
-		green := color.FgGreen.Render
-		fmt.Printf("%s%s%s%s\n",
-			green("Config maintained "),
-			green("by "), green(cfg.Maintainer),
-			green(" is loaded successfully"))
 	}
 }
