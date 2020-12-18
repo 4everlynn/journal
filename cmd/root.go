@@ -26,6 +26,8 @@ var rootCmd = &cobra.Command{
 	Long: `一个小而美，简单又不失性能的工作报告生成器(基于代码版本管理仓库)
 使用例子
 	./journal stylish --day 生成工作日报
+	./journal stylish --week 生成工作周报
+	./journal stylish --month 生成工作月报
 `,
 }
 

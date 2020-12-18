@@ -61,7 +61,7 @@ func echoHead(start time.Time, end time.Time, genType int) {
 	if genType == Day {
 		println(time.Now().Format("20060102") + " 日报")
 	} else if genType == Week {
-		println(start.Format("20060102") + " ～ " + end.Format("20060102") + " 周报")
+		println(start.Format("20060102") + " ～ " + end.AddDate(0, 0, -1).Format("20060102") + " 周报")
 	} else if genType == Month {
 		println(start.Format("200601") + " ～ " + end.Format("200601") + " 月报")
 	}
