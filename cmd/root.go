@@ -25,7 +25,7 @@ var rootCmd = &cobra.Command{
 	Short: "一个小而美，简单又不失性能的工作报告命令行工作(CLI)(基于代码版本管理仓库)",
 	Long: `一个小而美，简单又不失性能的工作报告生成器(基于代码版本管理仓库)
 使用例子
-	./journal stylish -type=day 生成工作日报
+	./journal stylish --day 生成工作日报
 `,
 }
 

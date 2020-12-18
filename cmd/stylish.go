@@ -19,10 +19,20 @@ var stylishCmd = &cobra.Command{
 	Run:   generate,
 }
 
+const (
+	Day   = 0
+	Week  = 1
+	Month = 2
+)
+
 // generate daily report
 func generate(cmd *cobra.Command, args []string) {
 	cfg := GetConfig()
-	println(time.Now().Format("20060102") + " 日报")
+	// get gen type
+	genType := ResolveType(cmd)
+	start, end := GetDateRange(genType)
+	// echo head info
+	echoHead(start, end, genType)
 	for service, git := range cfg.Git {
 		if git.Disable == true {
 			continue
@@ -32,9 +42,8 @@ func generate(cmd *cobra.Command, args []string) {
 		git.Path = repo
 		_, err := os.Stat(repo)
 		if err == nil {
-			timeStr := time.Now().Format("2006-01-02")
-			start, _ := time.ParseInLocation("2006-01-02", timeStr, time.Local)
-			all = append(all, ReportFromGit(git, start.Unix(), start.AddDate(0, 0, 1).Unix()-1)...)
+			// add report content
+			all = append(all, ReportFromGit(git, start.Unix(), end.Unix()-1)...)
 			if len(all) > 0 {
 				// inject real path
 				git.Path = repo
@@ -46,6 +55,53 @@ func generate(cmd *cobra.Command, args []string) {
 			color.Danger.Printf(".git is missing in repository %s\n", service)
 		}
 	}
+}
+
+func echoHead(start time.Time, end time.Time, genType int) {
+	if genType == Day {
+		println(time.Now().Format("20060102") + " 日报")
+	} else if genType == Week {
+		println(start.Format("20060102") + " ～ " + end.Format("20060102") + " 周报")
+	} else if genType == Month {
+		println(start.Format("200601") + " ～ " + end.Format("200601") + " 月报")
+	}
+}
+
+func GetDateRange(genType int) (time.Time, time.Time) {
+	timeStr := time.Now().Format("2006-01-02")
+	start, _ := time.ParseInLocation("2006-01-02", timeStr, time.Local)
+	end, _ := time.ParseInLocation("2006-01-02", timeStr, time.Local)
+	if genType == Day {
+		end = end.AddDate(0, 0, 1)
+	} else if genType == Week {
+		start = start.AddDate(0, 0, int(time.Monday-start.Weekday()))
+		end = end.AddDate(0, 0, int(time.Friday-end.Weekday())+1)
+	} else if genType == Month {
+		start = time.Date(time.Now().Year(), time.Now().Month(), 1, 0, 0, 0, 0, time.Local)
+		end = start.AddDate(0, 1, 0)
+	}
+	return start, end
+}
+
+// ResolveType  determine the build type
+func ResolveType(cmd *cobra.Command) int {
+
+	isMonth, err := cmd.Flags().GetBool("month")
+	if err == nil && isMonth {
+		return Month
+	}
+
+	isWeek, err := cmd.Flags().GetBool("week")
+	if err == nil && isWeek {
+		return Week
+	}
+
+	isDay, err := cmd.Flags().GetBool("day")
+	if err == nil && isDay {
+		return Day
+	}
+
+	return 0
 }
 
 func ReportFromGit(git config.Git, start int64, end int64) []support.GitLog {
@@ -65,4 +121,6 @@ func init() {
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
 	stylishCmd.Flags().BoolP("day", "d", true, "output as work report by day")
+	stylishCmd.Flags().BoolP("week", "w", false, "output as work report by week")
+	stylishCmd.Flags().BoolP("month", "m", false, "output as work report by month")
 }

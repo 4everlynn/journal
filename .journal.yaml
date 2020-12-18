@@ -11,6 +11,10 @@ git:
     name: 发货宝接口
     path: /Users/disware/Documents/Java/boneco-backend
     disable: false
+  ble-mystrace-plugin:
+    name: 脉迹手环SDK
+    path: /Users/disware/WeChatProjects/plugin-ble-sdk
+    disable: false
   windows-x64-client:
     name: 鲁班流量宝
     path: /Users/disware/Vue/lbft/windows-x64-client
