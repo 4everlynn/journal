@@ -7,7 +7,7 @@
 ![stage](./stage.gif)
 
 # How to download ?
-See [RELEASE](https://github.com/4everlynn/journal/releases/tag/1.0.0)
+See [RELEASE](https://github.com/4everlynn/journal/releases)
 
 # Features
 
