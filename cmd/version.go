@@ -12,7 +12,7 @@ var versionCmd = &cobra.Command{
 	Long:  `Show version of journal`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("Journal Command Line Interface by Edward Jobs <diswares@outlook.com>")
-		fmt.Println("version 1.0.0 alpha built at 2020/09/25")
+		fmt.Println("version 1.0.2 alpha built at 2020/12/18")
 	},
 }
 
