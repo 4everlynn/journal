@@ -84,6 +84,9 @@ If you only need to connect, run it as a client.`,
 						UserMsg(color.FgYellow.Render(ctx.Property.Name+" -> ") + color.FgYellow.Render(words))
 					}
 				},
+				Deleted: func(client net.Conn, ctx support.ServerContext) {
+					SysMsg("IP " + client.RemoteAddr().String() + " LEAVE")
+				},
 				Received: func(bytes []byte, ctx support.ServerContext, conn net.Conn) {
 					ReceivedMsg(fmt.Sprintf("%s", string(bytes)))
 					// dispatch msg to other clients

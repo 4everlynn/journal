@@ -3,6 +3,7 @@ package support
 import (
 	"diswares.com.journal/config"
 	"fmt"
+	"io"
 	"net"
 )
 
@@ -61,11 +62,14 @@ func Client(client config.Exchange, hooks ClientHooks) ClientContext {
 		buffer := make([]byte, 1024)
 		for {
 			size, e := socket.Read(buffer)
-			Catch(e, func() {
+
+			if e == io.EOF {
+				break
+			} else {
 				if hooks.Received != nil {
 					hooks.Received(buffer[0:size])
 				}
-			})
+			}
 		}
 	})
 

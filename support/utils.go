@@ -4,7 +4,6 @@ package support
 func Catch(err error, hook func()) {
 	if err != nil {
 		panic(err)
-
 	}
 	if hook != nil {
 		hook()

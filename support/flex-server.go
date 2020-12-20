@@ -3,6 +3,7 @@ package support
 import (
 	"diswares.com.journal/config"
 	"fmt"
+	"io"
 	"net"
 )
 
@@ -12,6 +13,7 @@ type ServerHooks struct {
 	Accepted func(client net.Conn, ctx ServerContext)
 	Received func(buffer []byte, ctx ServerContext, conn net.Conn)
 	Ready    func(ctx ServerContext)
+	Deleted  func(client net.Conn, ctx ServerContext)
 }
 
 type ServerContext struct {
@@ -77,13 +79,24 @@ func Bootstrap(server config.Exchange, hooks ServerHooks) ServerContext {
 					go hooks.Accepted(conn, context)
 
 					go func() {
+						// release
+						defer func() {
+							_ = conn.Close()
+						}()
+
 						for {
 							size, err := conn.Read(buffer)
-							Catch(err, func() {
+							if err == io.EOF {
+								delete(context.Connections, conn.RemoteAddr().String())
+								if hooks.Deleted != nil {
+									hooks.Deleted(conn, context)
+								}
+								break
+							} else {
 								if hooks.Received != nil && size > 0 {
 									hooks.Received(buffer[0:size], context, conn)
 								}
-							})
+							}
 						}
 					}()
 
