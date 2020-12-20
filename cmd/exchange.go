@@ -59,7 +59,7 @@ If you only need to connect, run it as a client.`,
 				},
 				Ready: func(ctx support.ClientContext) {
 					for {
-						print(color.FgWhite.Render(fmt.Sprintf("%s$ ", ctx.Property.Name)))
+						print(color.FgWhite.Render(fmt.Sprintf("%s# ", ctx.Property.Name)))
 						words := ctx.Scanner.ReadLine()
 						ctx.Write([]byte(ctx.Property.Name + " <- " + words))
 						UserMsg(color.FgYellow.Render(ctx.Property.Name+" -> ") + color.FgYellow.Render(words))
@@ -67,7 +67,7 @@ If you only need to connect, run it as a client.`,
 				},
 				Received: func(bytes []byte) {
 					ReceivedMsg(fmt.Sprintf("%s", string(bytes)))
-					print(color.FgWhite.Render(fmt.Sprintf("%s$ ", properties.Name)))
+					print(color.FgWhite.Render(fmt.Sprintf("%s# ", properties.Name)))
 				},
 			})
 

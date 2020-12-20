@@ -38,7 +38,7 @@ func Client(client config.Exchange, hooks ClientHooks) ClientContext {
 		Property: client,
 	}
 	// return when the connection fails
-	if nil == socket {
+	if err != nil {
 		fmt.Printf("\nERROR | Fail to start client, please check whether the parameters are normal\n")
 		return ctx
 	}

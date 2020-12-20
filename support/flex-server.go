@@ -39,6 +39,14 @@ func (ctx ServerContext) Shutdown() {
 }
 
 func Bootstrap(server config.Exchange, hooks ServerHooks) ServerContext {
+
+	if server.Host == "localhost" {
+		ip, err := LocalIP()
+		Catch(err, func() {
+			server.Host = ip
+		})
+	}
+
 	socket, err := net.Listen(server.Protocol, fmt.Sprintf("%s:%d", server.Host, server.Port))
 	context := ServerContext{
 		socket:   socket,
