@@ -1,8 +1,8 @@
 package cmd
 
 import (
-	"diswares.com.journal/config"
 	"fmt"
+	"github.com/4everlynn/journal/config"
 	"github.com/spf13/cobra"
 	"log"
 	"os"

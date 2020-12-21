@@ -1,8 +1,8 @@
 package support
 
 import (
-	"diswares.com.journal/config"
 	"fmt"
+	"github.com/4everlynn/journal/config"
 	"github.com/gookit/color"
 	"io"
 	"net"

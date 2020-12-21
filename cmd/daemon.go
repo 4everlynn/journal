@@ -2,8 +2,8 @@ package cmd
 
 import (
 	"bufio"
-	"diswares.com.journal/global"
-	"diswares.com.journal/support"
+	"github.com/4everlynn/journal/global"
+	"github.com/4everlynn/journal/support"
 	"github.com/martinlindhe/notify"
 	"github.com/spf13/cobra"
 	"io"

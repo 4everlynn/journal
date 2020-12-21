@@ -1,9 +1,9 @@
 package cmd
 
 import (
-	"diswares.com.journal/config"
-	"diswares.com.journal/support"
 	"fmt"
+	"github.com/4everlynn/journal/config"
+	"github.com/4everlynn/journal/support"
 	"github.com/gookit/color"
 	"github.com/spf13/cobra"
 	"net"
