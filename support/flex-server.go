@@ -3,6 +3,7 @@ package support
 import (
 	"diswares.com.journal/config"
 	"fmt"
+	"github.com/gookit/color"
 	"io"
 	"net"
 )
@@ -46,6 +47,8 @@ func Bootstrap(server config.Exchange, hooks ServerHooks) ServerContext {
 			server.Host = ip
 		})
 	}
+
+	println(color.FgGreen.Render(fmt.Sprintf("SERVER HOST AT %s:%d", server.Host, server.Port)))
 
 	socket, err := net.Listen(server.Protocol, fmt.Sprintf("%s:%d", server.Host, server.Port))
 	context := ServerContext{

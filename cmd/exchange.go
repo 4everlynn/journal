@@ -74,7 +74,7 @@ If you only need to connect, run it as a client.`,
 		} else if isServer {
 			support.Bootstrap(properties, support.ServerHooks{
 				Started: func(ctx support.ServerContext) {
-					fmt.Printf("\033c")
+					//fmt.Printf("\033c")
 				},
 				Ready: func(ctx support.ServerContext) {
 					for {

@@ -28,7 +28,7 @@ var daemonCmd = &cobra.Command{
 				gitLog := support.ParseLine(string(bytes))
 				if len(gitLog.Message) > 0 {
 					builder := make([]string, 0)
-					builder = append(builder, "项目 ", git.Name, "提交了代码记得要规范地提交代码，以便于快速按时提交日报")
+					builder = append(builder, "项目 ", git.Name, "提交了代码, 记得要规范地提交代码，以便于快速按时提交日报")
 					notify.Notify("Journal", "监测到代码提交", strings.Join(builder, ""), "")
 				}
 			})
