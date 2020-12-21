@@ -1,5 +1,6 @@
-![Author](https://img.shields.io/badge/Author-4everlynn-red)
-![Golang](https://img.shields.io/badge/100%25-Golang-olive)
+![Author](https://img.shields.io/badge/org-Fatewa_H.S.C-red)
+![Golang](https://img.shields.io/badge/Golang-olive)
+![Build](https://www.travis-ci.org/4everlynn/journal.svg?branch=dev)
 # Journal
 
 > Small but beautiful, simple and performance command line tool (CLI) for daily programming
