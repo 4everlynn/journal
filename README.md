@@ -4,7 +4,7 @@
 
 > Small but beautiful, simple and performance command line tool (CLI) for daily programming
 
-![stage](./stage.gif)
+![stage](resources/stage.gif)
 
 # How to download ?
 See [RELEASE](https://github.com/4everlynn/journal/releases)
@@ -19,7 +19,7 @@ See [RELEASE](https://github.com/4everlynn/journal/releases)
 # TODO
 - [x] Generate daily work reports (multiple projects), free your hands (cmd. journal stylish)
 - [ ] File monitoring (via daemon), impl code submission habits statistics (cmd. journal daemon)
-- [ ] Work communication space，realize lan command line chat and file transfer (cmd. journal chat -c(-s) -h localhost -P 5432 -p 123456 )
+- [x] Work communication space，realize lan command line chat and file transfer (cmd. journal exchange -c(-s) -H localhost -p 123456 )
 
 # Getting Start
 
@@ -42,18 +42,19 @@ git:
     path: /home/4everlynn/dev/journal
 ```
 
-## Usage
+## Usages
+
+### stylish (reporting)
 
 ```bash
-./journal stylish
+./journal stylish -d/-w/-m
 ```
 
 ### Output
 
-
 ```text
 Config maintained by Edward is loaded successfully
-20200927 日报
+20200927 日报/周报/月报
 Journal
   1、first commit
   2、Added the option of disable report generation in the warehouse
@@ -72,4 +73,34 @@ Project
   12、add shipper api
   13、add global ex.h & shipper api recreate
   14、commit sys code
+```
+
+### exchange (tcp based exchanging)
+
+#### Principle
+
+![stage](resources/exchange.jpg)
+
+User (let's call it A for the time being) initiates the Server side,   
+and all other users are as Clients to establish a connection with A.     
+The responsibility of A is to maintain and monitor the connection of the Clients and when Client has messages,    
+it will dispatch the message to other Clients, and at the same time. 
+If message generated, it is also distributed to all clients,   
+so from a role perspective, A is like the homeowner, and all other clients are members.
+
+
+#### server slide
+```bash
+./journal exchange -s -n SERVER
+```
+
+#### Output
+
+```bash
+SERVER HOST AT 127.0.0.1:9651
+```
+
+#### client
+```bash
+./journal exchange -c -H 127.0.0.1 -n CLIENT
 ```
