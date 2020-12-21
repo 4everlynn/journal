@@ -6,5 +6,6 @@ go_import_path: fatewa.org/journal
 
 script:
   - echo "JOURNAL START BUILDING"
+  - go get gopkg.in/toast.v1
   - go get github.com/inconshreveable/mousetrap
   - ./build.sh
