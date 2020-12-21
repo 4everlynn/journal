@@ -54,7 +54,7 @@ git:
 
 ```text
 Config maintained by Edward is loaded successfully
-20200927 日报/周报/月报
+20200927 Daily/Weekly/Monthly
 Journal
   1、first commit
   2、Added the option of disable report generation in the warehouse
@@ -83,12 +83,12 @@ Project
 
 ![exchange](resources/exchange.jpg)
 
-    User (let's call it A for the time being) initiates the Server side, and all other users are as Clients to establish a connection with A.     
+  User (let's call it A for the time being) initiates the Server side, and all other users are as Clients to establish a connection with A.     
    
-    The responsibility of A is to maintain and monitor the connection of the Clients and when Client has messages,      
+  The responsibility of A is to maintain and monitor the connection of the Clients and when Client has messages,      
 it will dispatch the message to other Clients, and at the same time.    
 
-    If message generated, it is also distributed to all clients, so from a role perspective, 
+  If message generated, it is also distributed to all clients, so from a role perspective, 
 A is like the homeowner, and all other clients are members.   
 
 
