@@ -84,8 +84,7 @@ Project
 User (let's call it A for the time being) initiates the Server side, and all other users are as Clients to establish a connection with A.     
 The responsibility of A is to maintain and monitor the connection of the Clients and when Client has messages,      
 it will dispatch the message to other Clients, and at the same time.    
-If message generated, it is also distributed to all clients,     
-so from a role perspective, A is like the homeowner, and all other clients are members.   
+If message generated, it is also distributed to all clients,so from a role perspective, A is like the homeowner, and all other clients are members.   
 
 
 #### server slide
