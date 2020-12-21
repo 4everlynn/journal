@@ -77,9 +77,11 @@ Project
 
 ### exchange (tcp based exchanging)
 
+![exchange](resources/exchange.gif)
+
 #### Principle
 
-![stage](resources/exchange.jpg)
+![exchange](resources/exchange.jpg)
 
 User (let's call it A for the time being) initiates the Server side,   
 and all other users are as Clients to establish a connection with A.     
