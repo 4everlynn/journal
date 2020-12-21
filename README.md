@@ -19,7 +19,6 @@ See [RELEASE](https://github.com/4everlynn/journal/releases)
 
 # TODO
 - [x] Generate daily work reports (multiple projects), free your hands (cmd. journal stylish)
-- [ ] File monitoring (via daemon), impl code submission habits statistics (cmd. journal daemon)
 - [x] Work communication space，realize lan command line chat and file transfer (cmd. journal exchange -c(-s) -H localhost -p 123456 )
 
 # Getting Start
