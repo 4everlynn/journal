@@ -1,6 +1,6 @@
 ![Author](https://img.shields.io/badge/org-Fatewa_H.S.C-red)
-![Golang](https://img.shields.io/badge/Golang-olive)
 ![Build](https://www.travis-ci.org/4everlynn/journal.svg?branch=dev)
+[![Go Report Card](https://goreportcard.com/badge/github.com/4everlynn/journal)](https://goreportcard.com/report/github.com/4everlynn/journal)
 # Journal
 
 > Small but beautiful, simple and performance command line tool (CLI) for daily programming
@@ -20,6 +20,7 @@ See [RELEASE](https://github.com/4everlynn/journal/releases)
 # TODO
 - [x] Generate daily work reports (multiple projects), free your hands (cmd. journal stylish)
 - [x] Work communication space，realize lan command line chat and file transfer (cmd. journal exchange -c(-s) -H localhost -p 123456 )
+- [ ] Generate work report statistics (line chart of submission times, pie chart of project submission rate)
 
 # Getting Start
 

@@ -27,6 +27,12 @@ type Exchange struct {
 	Name     string
 }
 
+// Func function
+type Func struct {
+	Name string
+	Args []interface{}
+}
+
 type ExchangeContext interface {
 	Write(buffer []byte)
 	Shutdown()
@@ -47,11 +53,13 @@ func (scanner SampleScanner) init() SampleScanner {
 	return scanner
 }
 
+// ReadLine read a line of input from the terminal
 func (scanner SampleScanner) ReadLine() string {
 	line, _, _ := scanner.reader.ReadLine()
 	return string(line)
 }
 
+// ScannerInstance get instance of the scanner
 func ScannerInstance() SampleScanner {
 	scanner := SampleScanner{}
 	scanner = scanner.init()

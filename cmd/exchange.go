@@ -7,6 +7,7 @@ import (
 	"github.com/gookit/color"
 	"github.com/spf13/cobra"
 	"net"
+	"regexp"
 	"strings"
 )
 
@@ -28,7 +29,7 @@ func UserMsg(msg string) {
 // exchangeCmd represents the exchange command
 var exchangeCmd = &cobra.Command{
 	Use:   "exchange",
-	Short: "establish lan connection",
+	Short: "Establish lan connection",
 	Long: `If you want to initiate a communication, you need to start it as a server, 
 and other people will establish a connection with you as a client. 
 If you only need to connect, run it as a client.`,
@@ -80,6 +81,23 @@ If you only need to connect, run it as a client.`,
 					for {
 						print(color.FgWhite.Render(fmt.Sprintf("%s$ ", ctx.Property.Name)))
 						words := ctx.Scanner.ReadLine()
+
+						for {
+							parse, err := support.SmartFuncParser{}.Parse(words)
+							if err == nil {
+								invoke := config.Invoke(parse.Name, parse.Args...)
+								compile, err := regexp.Compile("@(\\w+)\\((.*?)\\)+")
+								support.Catch(err, func() {
+									match := compile.FindStringSubmatch(words)
+									words = strings.ReplaceAll(words, match[0], invoke)
+								})
+							} else {
+								break
+							}
+						}
+
+						println()
+
 						ctx.Write([]byte(ctx.Property.Name + " <- " + words))
 						UserMsg(color.FgYellow.Render(ctx.Property.Name+" -> ") + color.FgYellow.Render(words))
 					}
