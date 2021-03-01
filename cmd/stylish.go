@@ -20,9 +20,10 @@ var stylishCmd = &cobra.Command{
 }
 
 const (
-	Day   = 0
-	Week  = 1
-	Month = 2
+	Day     = 0
+	Week    = 1
+	Month   = 2
+	Quarter = 3
 )
 
 // generate daily report
@@ -64,6 +65,8 @@ func echoHead(start time.Time, end time.Time, genType int) {
 		println(start.Format("20060102") + " ～ " + end.AddDate(0, 0, -1).Format("20060102") + " Weekly")
 	} else if genType == Month {
 		println(start.Format("200601") + " ～ " + end.Format("200601") + " Monthly")
+	} else if genType == Quarter {
+		println(start.Format("200601") + " ～ " + end.Format("200601") + " Quarterly")
 	}
 }
 
@@ -79,12 +82,20 @@ func GetDateRange(genType int) (time.Time, time.Time) {
 	} else if genType == Month {
 		start = time.Date(time.Now().Year(), time.Now().Month(), 1, 0, 0, 0, 0, time.Local)
 		end = start.AddDate(0, 1, 0)
+	} else if genType == Quarter {
+		start = time.Date(time.Now().Year(), time.Now().Month(), 1, 0, 0, 0, 0, time.Local)
+		end = start.AddDate(0, 3, 0)
 	}
 	return start, end
 }
 
 // ResolveType  determine the build type
 func ResolveType(cmd *cobra.Command) int {
+
+	isQuarter, err := cmd.Flags().GetBool("quarter")
+	if err == nil && isQuarter {
+		return Quarter
+	}
 
 	isMonth, err := cmd.Flags().GetBool("month")
 	if err == nil && isMonth {
@@ -123,4 +134,5 @@ func init() {
 	stylishCmd.Flags().BoolP("day", "d", true, "output as work report by day")
 	stylishCmd.Flags().BoolP("week", "w", false, "output as work report by week")
 	stylishCmd.Flags().BoolP("month", "m", false, "output as work report by month")
+	stylishCmd.Flags().BoolP("quarter", "q", false, "output as work report by quarter")
 }
