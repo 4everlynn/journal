@@ -31,7 +31,9 @@ func generate(cmd *cobra.Command, args []string) {
 	cfg := GetConfig()
 	// get gen type
 	genType := ResolveType(cmd)
-	start, end := GetDateRange(genType)
+	// weather to use last period's data
+	isLast := isLastPeriod(cmd)
+	start, end := GetDateRange(genType, isLast)
 	// echo head info
 	echoHead(start, end, genType)
 	for service, git := range cfg.Git {
@@ -58,6 +60,14 @@ func generate(cmd *cobra.Command, args []string) {
 	}
 }
 
+func isLastPeriod(cmd *cobra.Command) bool {
+	isLast, err := cmd.Flags().GetBool("last")
+	if err == nil {
+		return isLast
+	}
+	return false
+}
+
 func echoHead(start time.Time, end time.Time, genType int) {
 	if genType == Day {
 		println(time.Now().Format("20060102") + " Daily")
@@ -70,21 +80,37 @@ func echoHead(start time.Time, end time.Time, genType int) {
 	}
 }
 
-func GetDateRange(genType int) (time.Time, time.Time) {
+func GetDateRange(genType int, isLast bool) (time.Time, time.Time) {
 	timeStr := time.Now().Format("2006-01-02")
 	start, _ := time.ParseInLocation("2006-01-02", timeStr, time.Local)
 	end, _ := time.ParseInLocation("2006-01-02", timeStr, time.Local)
 	if genType == Day {
 		end = end.AddDate(0, 0, 1)
+		if isLast {
+			start.AddDate(0, 0, -1)
+			end = end.AddDate(0, 0, -1)
+		}
 	} else if genType == Week {
 		start = start.AddDate(0, 0, int(time.Monday-start.Weekday()))
 		end = end.AddDate(0, 0, int(time.Friday-end.Weekday())+1)
+		if isLast {
+			start = start.AddDate(0, 0, -7)
+			end = end.AddDate(0, 0, -7)
+		}
 	} else if genType == Month {
 		start = time.Date(time.Now().Year(), time.Now().Month(), 1, 0, 0, 0, 0, time.Local)
 		end = start.AddDate(0, 1, 0)
+		if isLast {
+			start = start.AddDate(0, -1, 0)
+			end = end.AddDate(0, -1, 0)
+		}
 	} else if genType == Quarter {
 		start = time.Date(time.Now().Year(), time.Now().Month(), 1, 0, 0, 0, 0, time.Local)
 		end = start.AddDate(0, 3, 0)
+		if isLast {
+			start = start.AddDate(0, -3, 0)
+			end = end.AddDate(0, -3, 0)
+		}
 	}
 	return start, end
 }
@@ -131,6 +157,7 @@ func init() {
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
+	stylishCmd.Flags().BoolP("last", "l", false, "select previous period data")
 	stylishCmd.Flags().BoolP("day", "d", true, "output as work report by day")
 	stylishCmd.Flags().BoolP("week", "w", false, "output as work report by week")
 	stylishCmd.Flags().BoolP("month", "m", false, "output as work report by month")
