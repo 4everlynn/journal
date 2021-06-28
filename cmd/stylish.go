@@ -87,7 +87,7 @@ func GetDateRange(genType int, isLast bool) (time.Time, time.Time) {
 	if genType == Day {
 		end = end.AddDate(0, 0, 1)
 		if isLast {
-			start.AddDate(0, 0, -1)
+			start = start.AddDate(0, 0, -1)
 			end = end.AddDate(0, 0, -1)
 		}
 	} else if genType == Week {
