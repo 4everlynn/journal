@@ -70,7 +70,7 @@ func isLastPeriod(cmd *cobra.Command) bool {
 
 func echoHead(start time.Time, end time.Time, genType int) {
 	if genType == Day {
-		println(time.Now().Format("20060102") + " Daily")
+		println(start.Format("20060102") + " Daily")
 	} else if genType == Week {
 		println(start.Format("20060102") + " ～ " + end.AddDate(0, 0, -1).Format("20060102") + " Weekly")
 	} else if genType == Month {
