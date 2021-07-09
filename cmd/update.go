@@ -76,6 +76,8 @@ func handleGit(git support.GitRelease) {
 			color.FgLightGreen.Render("Topic is: ", git.Name),
 		)
 		download(git)
+	} else {
+		fmt.Println(color.FgLightMagenta.Render("UP TO DATE"))
 	}
 
 }
