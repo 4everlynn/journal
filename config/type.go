@@ -19,6 +19,13 @@ type JournalConfig struct {
 	Git        map[string]Git
 }
 
+// Version app version
+type Version struct {
+	Master int
+	Mirror int
+	Patch  int
+}
+
 // Exchange exchange properties
 type Exchange struct {
 	Port     int

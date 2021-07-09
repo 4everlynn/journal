@@ -8,7 +8,7 @@ import (
 )
 
 type LogParser interface {
-	// parse head file to GitLog
+	// Parse parse head file to GitLog
 	Parse(headFilePath string, start int64, end int64) []GitLog
 }
 

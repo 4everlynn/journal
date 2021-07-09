@@ -1,6 +1,8 @@
 package plugins
 
-import "reflect"
+import (
+	"reflect"
+)
 
 type EchoPlugin struct {
 	mapping map[int]interface{}

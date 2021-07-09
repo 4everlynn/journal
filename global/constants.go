@@ -1,6 +1,6 @@
 package global
 
-// define a cross platform file separator
+// Separator define a cross platform file separator
 var Separator = _injectSep()
 
 func _injectSep() string {

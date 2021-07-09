@@ -2,8 +2,19 @@ package cmd
 
 import (
 	"fmt"
+	"github.com/4everlynn/journal/config"
 	"github.com/spf13/cobra"
 )
+
+var JournalVersion = config.Version{
+	Master: 1,
+	Mirror: 0,
+	Patch:  5,
+}
+
+func buildVersion() string {
+	return fmt.Sprintf("%d.%d.%d", JournalVersion.Master, JournalVersion.Mirror, JournalVersion.Patch)
+}
 
 // versionCmd represents the version command
 var versionCmd = &cobra.Command{
@@ -12,7 +23,7 @@ var versionCmd = &cobra.Command{
 	Long:  `Show version of journal`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("Journal Command Line Interface by Edward Jobs <diswares@outlook.com>")
-		fmt.Println("version 1.0.2 alpha built at 2020/12/18")
+		fmt.Printf("version %s built at 2021/07/09\n", buildVersion())
 	},
 }
 
